@@ -52,7 +52,6 @@ public class UserMealsUtil {
                     exceed=false;
                 }
                 for (int j = (i-countOfDays); j < i; j++) {
-                    System.out.println("            "+mealList.get(j).getDateTime().toLocalTime()+" "+startTime+" "+endTime);
                     if (TimeUtil.isBetween(mealList.get(j).getDateTime().toLocalTime(),startTime,endTime)){
                         resulList.add(new UserMealWithExceed(mealList.get(j).getDateTime(), mealList.get(j).
                                 getDescription(), mealList.get(j).getCalories(), exceed));
