@@ -17,9 +17,6 @@ import java.util.List;
 public class UserMealsUtil {
     public static void main(String[] args) {
         List<UserMeal> mealList = Arrays.asList(
-                new UserMeal(LocalDateTime.of(2015, Month.MAY, 29,10,0), "Завтрак", 500),
-                new UserMeal(LocalDateTime.of(2015, Month.MAY, 29,13,0), "Обед   ", 1000),
-                new UserMeal(LocalDateTime.of(2015, Month.MAY, 29,20,0), "Ужин   ", 501),
                 new UserMeal(LocalDateTime.of(2015, Month.MAY, 30,10,0), "Завтрак", 500),
                 new UserMeal(LocalDateTime.of(2015, Month.MAY, 30,13,0), "Обед   ", 1000),
                 new UserMeal(LocalDateTime.of(2015, Month.MAY, 30,20,0), "Ужин   ", 500),
@@ -46,11 +43,7 @@ public class UserMealsUtil {
                 countOfDays++;
             }
             if (dayOfMonth != localDateTime.getDayOfMonth() || i == (mealList.size()-1)){
-                if (sumOfCaloriesDay >caloriesPerDay){
-                    exceed=true;
-                } else {
-                    exceed=false;
-                }
+                exceed = sumOfCaloriesDay > caloriesPerDay;
                 for (int j = (i-countOfDays); j < i; j++) {
                     if (TimeUtil.isBetween(mealList.get(j).getDateTime().toLocalTime(),startTime,endTime)){
                         resulList.add(new UserMealWithExceed(mealList.get(j).getDateTime(), mealList.get(j).
