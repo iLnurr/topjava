@@ -12,12 +12,13 @@ import java.io.IOException;
 import static org.slf4j.LoggerFactory.getLogger;
 
 
-public class MealList extends HttpServlet {
-    private static final Logger LOG = getLogger(MealList.class);
+public class MealServlet extends HttpServlet {
+    private static final Logger LOG = getLogger(MealServlet.class);
 
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LOG.debug("redirect to mealList.jsp");
-        resp.sendRedirect("mealList.jsp");
+        req.getRequestDispatcher("/mealList.jsp").forward(req, resp);
+        //resp.sendRedirect("mealList.jsp");
     }
 }
