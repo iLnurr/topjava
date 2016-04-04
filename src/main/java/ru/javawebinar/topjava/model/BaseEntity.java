@@ -1,9 +1,5 @@
 package ru.javawebinar.topjava.model;
 
-/**
- * User: gkislin
- * Date: 22.08.2014
- */
 public class BaseEntity {
     public static final int START_SEQ = 100000;
 

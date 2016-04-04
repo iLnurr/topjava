@@ -14,11 +14,6 @@ import ru.javawebinar.topjava.repository.UserRepository;
 import javax.sql.DataSource;
 import java.util.List;
 
-/**
- * User: gkislin
- * Date: 26.08.2014
- */
-
 @Repository
 public class JdbcUserRepositoryImpl implements UserRepository {
 

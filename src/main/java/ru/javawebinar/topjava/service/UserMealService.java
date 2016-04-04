@@ -8,10 +8,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Collection;
 
-/**
- * GKislin
- * 15.06.2015.
- */
 public interface UserMealService {
     UserMeal get(int id, int userId) throws NotFoundException;
 

@@ -16,10 +16,6 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
-/**
- * GKislin
- * 06.03.2015.
- */
 @Controller
 public class UserMealRestController {
     private static final Logger LOG = LoggerFactory.getLogger(UserMealRestController.class);

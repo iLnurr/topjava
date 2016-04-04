@@ -7,9 +7,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * GKislin
- * 06.01.2015.
- *
  * @param <T> : entity
  * @param <R> : testEntity, converter result for compare
  */

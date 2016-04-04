@@ -12,10 +12,6 @@ import java.time.Month;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * User: gkislin
- * Date: 22.08.2014
- */
 public class SpringMain {
     public static void main(String[] args) {
         // java 7 Automatic resource management
