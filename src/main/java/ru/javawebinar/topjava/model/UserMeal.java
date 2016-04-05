@@ -1,11 +1,18 @@
 package ru.javawebinar.topjava.model;
 
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@NamedQueries({
+        @NamedQuery(name = UserMeal.DELETE, query = "DELETE FROM UserMeal um WHERE um.id=:id AND um.user.id=:user_id"),
+        @NamedQuery(name = UserMeal.ALL_SORTED, query = "SELECT um FROM UserMeal um ORDER BY um.dateTime DESC "),
+})
+@Entity
+@Table(name = "meals")
 public class UserMeal extends BaseEntity {
 
+    public static final String DELETE = "UserMeal.delete";
+    public static final String ALL_SORTED = "UserMeal.getAll";
     private LocalDateTime dateTime;
 
     private String description;
@@ -13,6 +20,7 @@ public class UserMeal extends BaseEntity {
     protected int calories;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     public UserMeal() {
