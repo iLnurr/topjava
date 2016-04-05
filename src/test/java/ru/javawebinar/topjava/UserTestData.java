@@ -35,7 +35,7 @@ public class UserTestData {
         }
 
         public User asUser() {
-            return new User(this);
+            return new User();
         }
 
         @Override
