@@ -15,9 +15,6 @@ public class UserMeal extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
-
     public UserMeal() {
     }
 
