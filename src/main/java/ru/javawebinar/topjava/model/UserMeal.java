@@ -1,3 +1,4 @@
+//@SuppressWarnings("JpaQlInspection")
 package ru.javawebinar.topjava.model;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -5,7 +6,6 @@ import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
 
