@@ -1,9 +1,13 @@
 package ru.javawebinar.topjava.repository.datajpa;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.model.UserMeal;
 import ru.javawebinar.topjava.repository.UserMealRepository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -13,9 +17,18 @@ import java.util.List;
  */
 @Repository
 public class DataJpaUserMealRepositoryImpl implements UserMealRepository{
+
+    @Autowired
+    ProxyUserMealRepository proxy;
+
+    @PersistenceContext
+    private EntityManager em;
+
     @Override
     public UserMeal save(UserMeal userMeal, int userId) {
-        return null;
+        User ref = em.getReference(User.class, userId);
+        userMeal.setUser(ref);
+        return proxy.save(userMeal);
     }
 
     @Override
