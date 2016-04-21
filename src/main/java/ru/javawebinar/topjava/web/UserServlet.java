@@ -38,7 +38,5 @@ public class UserServlet extends HttpServlet {
         request.setAttribute("userList", adminController.getAll());
         request.getRequestDispatcher("/userList.jsp").forward(request, response);
 //        response.sendRedirect("userList.jsp");
-//        request.getRequestDispatcher("/userList.jsp").forward(request, response);
-        response.sendRedirect("userList.jsp");
     }
 }
