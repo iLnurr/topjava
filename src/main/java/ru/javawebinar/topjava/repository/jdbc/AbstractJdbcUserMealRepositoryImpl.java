@@ -7,23 +7,19 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.transaction.annotation.Transactional;
 import ru.javawebinar.topjava.model.UserMeal;
 import ru.javawebinar.topjava.repository.UserMealRepository;
 
 import javax.sql.DataSource;
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Transactional(readOnly = true)
 public abstract class AbstractJdbcUserMealRepositoryImpl<T> implements UserMealRepository {
+
+    private final SimpleJdbcInsert insertUserMeal;
+
     private final RowMapper<UserMeal> rowMapper;
-
-    public AbstractJdbcUserMealRepositoryImpl(RowMapper<UserMeal> rowMapper, DataSource dataSource) {
-        this.rowMapper = rowMapper;
-        this.insertUserMeal = new SimpleJdbcInsert(dataSource)
-                .withTableName("meals")
-                .usingGeneratedKeyColumns("id");
-
-    }
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -31,11 +27,17 @@ public abstract class AbstractJdbcUserMealRepositoryImpl<T> implements UserMealR
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    private SimpleJdbcInsert insertUserMeal;
+    public AbstractJdbcUserMealRepositoryImpl(RowMapper<UserMeal> rowMapper, DataSource dataSource) {
+        this.rowMapper = rowMapper;
+        this.insertUserMeal = new SimpleJdbcInsert(dataSource)
+                .withTableName("meals")
+                .usingGeneratedKeyColumns("id");
+    }
 
     protected abstract T toDbValue(LocalDateTime ldt);
 
     @Override
+    @Transactional
     public UserMeal save(UserMeal userMeal, int userId) {
         MapSqlParameterSource map = new MapSqlParameterSource()
                 .addValue("id", userMeal.getId())
@@ -58,6 +60,7 @@ public abstract class AbstractJdbcUserMealRepositoryImpl<T> implements UserMealR
     }
 
     @Override
+    @Transactional
     public boolean delete(int id, int userId) {
         return jdbcTemplate.update("DELETE FROM meals WHERE id=? AND user_id=?", id, userId) != 0;
     }
