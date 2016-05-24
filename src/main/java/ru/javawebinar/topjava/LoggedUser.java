@@ -5,10 +5,10 @@ import ru.javawebinar.topjava.util.UserMealsUtil;
 import ru.javawebinar.topjava.model.BaseEntity;
 
 public class LoggedUser {
+    private static int id = BaseEntity.START_SEQ;
+
     private LoggedUser() {
     }
-
-    private static int id = BaseEntity.START_SEQ;
 
     public static int id() {
         return id;
