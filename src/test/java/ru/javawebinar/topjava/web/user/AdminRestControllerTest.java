@@ -49,7 +49,7 @@ public class AdminRestControllerTest extends AbstractControllerTest {
 
     @Test
     public void testUpdate() throws Exception {
-        User updated = new User(USER);
+        User updated = USER;
         updated.setName("UpdatedName");
         updated.setRoles(Collections.singletonList(Role.ROLE_ADMIN));
         mockMvc.perform(put(REST_URL + USER_ID)
