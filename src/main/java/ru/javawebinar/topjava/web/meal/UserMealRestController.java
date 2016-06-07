@@ -1,10 +1,9 @@
+package ru.javawebinar.topjava.web.meal;
+
+
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.util.List;
-
-@RestController
-@RequestMapping(value = UserMealRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
-package ru.javawebinar.topjava.web.meal;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
@@ -15,12 +14,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.javawebinar.topjava.model.UserMeal;
 import ru.javawebinar.topjava.to.UserMealWithExceed;
-import ru.javawebinar.topjava.service.UserMealServiceImpl;
-import ru.javawebinar.topjava.to.UserMealWithExceed;
-import ru.javawebinar.topjava.util.TimeUtil;
-import ru.javawebinar.topjava.util.UserMealsUtil;
 
-@Controller
+@RestController
+@RequestMapping(value = UserMealRestController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class UserMealRestController extends AbstractUserMealController {
     public static final String REST_URL = "/rest/profile/meals";
 
