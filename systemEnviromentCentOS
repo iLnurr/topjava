@@ -1,0 +1,17 @@
+1.
+Create a file called topjava.sh under /etc/profile.d/ directory.
+    vi /etc/profile.d/topjava.sh
+
+2.
+Add the following contents:
+    #!/bin/bash
+    TOPJAVA_ROOT=/home/ilnur/repo/topjava
+    PATH=$TOPJAVA_ROOT/bin:$PATH
+    export PATH TOPJAVA_ROOT
+    export CLASSPATH=.
+
+3.Save and close the file. 
+4.Make it executable using the following command.
+    chmod +x /etc/profile.d/topjava.sh
+5.Then, set the environment variables permanently by running the following command:
+    source /etc/profile.d/topjava.sh
