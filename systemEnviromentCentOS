@@ -10,7 +10,10 @@ Add the following contents:
     export PATH TOPJAVA_ROOT
     export CLASSPATH=.
 
-3.Save and close the file. 
+3.Save and close the file.
+    :w
+    :q
+    
 4.Make it executable using the following command.
     chmod +x /etc/profile.d/topjava.sh
 5.Then, set the environment variables permanently by running the following command:
