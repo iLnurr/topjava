@@ -53,8 +53,8 @@ public class ProfileRestControllerTest extends AbstractControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk());
 
-        MATCHER.assertEquals(UserUtil.updateFromTo(new User(USER), updatedTo), new User(userService.getByEmail("newemail@ya.ru")));
-        MATCHER.assertEquals(updated, userService.getByEmail("newEmail@ya.ru"));
-        MATCHER.assertEquals(updated, userService.getByEmail("newEmail"));
+        MATCHER.assertEquals(UserUtil.updateFromTo(USER, updatedTo), userService.getByEmail("newemail@ya.ru"));
+//        MATCHER.assertEquals(updatedTo, userService.getByEmail("newEmail@ya.ru"));
+//        MATCHER.assertEquals(updatedTo, userService.getByEmail("newEmail"));
     }
 }

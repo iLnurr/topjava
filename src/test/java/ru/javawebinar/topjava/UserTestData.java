@@ -40,9 +40,7 @@ public class UserTestData {
         }
 
         public User asUser() {
-            return UserUtil.prepareToSave(new User(this));
-            return new User(this.getId(), this.getName(), this.getEmail(), this.getPassword(), this.getCaloriesPerDay(),
-                    this.isEnabled(), this.getRoles());
+            return UserUtil.prepareToSave(this);
         }
 
         @Override
