@@ -13,11 +13,6 @@ import javax.persistence.PersistenceContext;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/**
- * User: gkisline
- * Date: 26.08.2014
- */
-
 @Repository
 @Transactional(readOnly = true)
 public class JpaUserMealRepositoryImpl implements UserMealRepository {
