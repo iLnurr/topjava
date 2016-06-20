@@ -13,10 +13,6 @@ import java.util.List;
 
 import static ru.javawebinar.topjava.util.UserMealsUtil.createFromTo;
 
-/**
- * GKislin
- * 06.03.2015.
- */
 @RestController
 @RequestMapping(value = "/ajax/profile/meals")
 public class UserMealAjaxController extends AbstractUserMealController {
