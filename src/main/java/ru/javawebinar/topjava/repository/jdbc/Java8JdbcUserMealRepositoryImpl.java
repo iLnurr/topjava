@@ -10,11 +10,6 @@ import ru.javawebinar.topjava.model.UserMeal;
 import javax.sql.DataSource;
 import java.time.LocalDateTime;
 
-/**
- * User: gkislin
- * Date: 26.08.2014
- */
-
 @Repository
 @Profile(Profiles.POSTGRES)
 public class Java8JdbcUserMealRepositoryImpl extends AbstractJdbcUserMealRepositoryImpl<LocalDateTime> {
