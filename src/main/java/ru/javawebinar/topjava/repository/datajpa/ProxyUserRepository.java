@@ -10,10 +10,6 @@ import ru.javawebinar.topjava.model.User;
 
 import java.util.List;
 
-/**
- * GKislin
- * 27.03.2015.
- */
 @Transactional(readOnly = true)
 public interface ProxyUserRepository extends JpaRepository<User, Integer> {
 
