@@ -8,10 +8,6 @@ import ru.javawebinar.topjava.repository.UserMealRepository;
 import java.time.LocalDateTime;
 import java.util.List;
 
-/**
- * GKislin
- * 27.03.2015.
- */
 @Repository
 public class DataJpaUserMealRepositoryImpl implements UserMealRepository {
 
