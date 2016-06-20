@@ -7,10 +7,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
-/**
- * GKislin
- * 11.01.2015.
- */
 public class UserMealTo {
     private int id;
 
